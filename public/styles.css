@@ -1,1 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+h1 {
+    color: #333;
+}
+
+#map {
+    width: 800px;
+    height: 600px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.visited { 
+    fill: #ff7f00; 
+}
+
+.unvisited { 
+    fill: #cccccc; 
+}
+
+.tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    pointer-events: none;
+}
+
+#add-record-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+#add-record-form > * {
+    margin-bottom: 10px;
+}
+
+#add-record-form select,
+#add-record-form input,
+#add-record-form textarea {
+    padding: 5px;
+    width: 100%;
+}
+
+#add-record-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#add-record-form button:hover {
+    background-color: #45a049;
+}
+
+#travel-records {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+#records-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#records-table th, #records-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#records-table th {
+    background-color: #f2f2f2;
+}
+
+#records-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#records-table button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#records-table button:hover {
+    background-color: #45a049;
+}
+
+#timeline-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+#timeline {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.dot {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+#stats-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#stats p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+#stats span {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+#login-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+#login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#login-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
