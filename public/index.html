@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣旅遊紀錄地圖</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <h1>台灣旅遊紀錄地圖</h1>
+    <div id="map"></div>
+    
+    <div id="search-filter-container">
+        <h3>搜索和篩選</h3>
+        <form id="search-filter-form">
+            <input type="text" id="county-search" placeholder="搜索縣市">
+            <input type="date" id="date-from" placeholder="起始日期">
+            <input type="date" id="date-to" placeholder="結束日期">
+            <button type="submit">搜索</button>
+            <button type="button" id="reset-filter">重置</button>
+        </form>
+    </div>
 
+    <form id="add-record-form">
+        <h3>添加新的旅遊記錄</h3>
+        <select id="county-select" required>
+            <option value="">選擇縣市</option>
+        </select>
+        <input type="date" id="visit-date" required>
+        <textarea id="visit-description" placeholder="描述您的旅遊經歷" required></textarea>
+        <input type="file" id="photo-upload" accept="image/*" multiple>
+        <button type="submit">添加記錄</button>
+    </form>
+
+    <div id="travel-records">
+        <h3>旅遊記錄列表</h3>
+        <table id="records-table">
+            <thead>
+                <tr>
+                    <th>縣市</th>
+                    <th>日期</th>
+                    <th>描述</th>
+                    <th>照片</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="records-body">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="timeline-container">
+        <h3>旅遊時間軸</h3>
+        <div id="timeline"></div>
+    </div>
+
+    <div id="stats-container">
+        <h3>旅遊統計</h3>
+        <div id="stats">
+            <p>已訪問縣市數量：<span id="visited-count">0</span></p>
+            <p>總旅行次數：<span id="total-trips">0</span></p>
+            <p>最常訪問的縣市：<span id="most-visited">無</span></p>
+            <p>最近一次旅行：<span id="last-trip">無</span></p>
+        </div>
+    </div>
+
+    <div id="charts-container">
+        <h3>旅遊分析圖表</h3>
+        <canvas id="travel-frequency-chart"></canvas>
+    </div>
+
+    <div id="data-export-import">
+        <h3>數據導出/導入</h3>
+        <button id="export-data">導出數據</button>
+        <input type="file" id="import-data" accept=".json">
+        <button id="import-button">導入數據</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
