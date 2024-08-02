@@ -1,166 +1,134 @@
+/* 全局樣式 */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1 {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #f0f8ff;
     color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+h1, h3 {
+    color: #005f73;
+    text-align: center;
+}
+
+/* 地圖樣式 */
 #map {
-    width: 800px;
-    height: 600px;
-    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-.visited { 
-    fill: #ff7f00; 
+/* 表單樣式 */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.unvisited { 
-    fill: #cccccc; 
-}
-
-.tooltip {
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 5px;
-    pointer-events: none;
-}
-
-#add-record-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-}
-
-#add-record-form > * {
-    margin-bottom: 10px;
-}
-
-#add-record-form select,
-#add-record-form input,
-#add-record-form textarea {
-    padding: 5px;
+input, select, textarea, button {
     width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-#add-record-form button {
-    padding: 10px;
-    background-color: #4CAF50;
+button {
+    background-color: #008CBA;
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#add-record-form button:hover {
-    background-color: #45a049;
+button:hover {
+    background-color: #005f73;
 }
 
-#travel-records {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 800px;
-}
-
-#records-table {
+/* 表格樣式 */
+table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-#records-table th, #records-table td {
+th, td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: left;
 }
 
-#records-table th {
+th {
+    background-color: #008CBA;
+    color: white;
+}
+
+tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-#records-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-#records-table button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-#records-table button:hover {
-    background-color: #45a049;
-}
-
+/* 時間軸樣式 */
 #timeline-container {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 800px;
+    position: relative;
+    margin-bottom: 20px;
 }
 
-#timeline {
-    width: 100%;
-    height: 200px;
-    margin-top: 10px;
+#timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #008CBA;
 }
 
-.dot {
-    stroke: #fff;
-    stroke-width: 1.5px;
-}
-
-#stats-container {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 800px;
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-#stats {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+/* 統計和圖表樣式 */
+#stats-container, #charts-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 #stats p {
-    margin: 10px 0;
-    font-size: 16px;
+    margin: 5px 0;
 }
 
-#stats span {
-    font-weight: bold;
-    color: #4CAF50;
+/* 數據導出/導入樣式 */
+#data-export-import {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#login-container {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 300px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+#data-export-import input[type="file"] {
+    flex-grow: 1;
+    margin-right: 10px;
 }
 
-#login-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
+/* 響應式設計 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
 
-#login-container button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    table, th, td {
+        font-size: 14px;
+    }
+
+    #data-export-import {
+        flex-direction: column;
+    }
+
+    #data-export-import button, #data-export-import input[type="file"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
